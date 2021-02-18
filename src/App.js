@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import Todo from './components/Todo';
+import Form from './components/Form';
 
-function App() {
+function App(props) {
+  const todoList = props.tasks.map(todo =>
+      <Todo id={todo.id} name={todo.name} completed={todo.completed}
+          key={todo.id}/>);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="todos">
+        <h1>todos</h1>
+        <Form todoList={todoList}/>
+        <small>Left-click to toggle complete/incomplete.<br/>Right-click to
+          delete.</small>
+      </div>
   );
 }
 
