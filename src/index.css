@@ -19,18 +19,34 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
 }
 
 h1 {
   font-family: 'Noto Sans JP', sans-serif;
-  font-size: 4rem;
+  font-size: 3rem;
+  line-height: 3rem;
+  padding-bottom: 3px;
 }
 
 form {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   max-width: 100%;
   width: 400px;
+}
+
+#logo {
+  max-height: 3.5rem;
+  margin-left: 0.6rem;
+  /*transform: rotate(4deg);*/
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+
+.heading {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 2rem 0;
 }
 
 .input {
@@ -64,6 +80,6 @@ form {
 }
 
 small {
-  margin-top: 3rem;
+  margin-top: 2rem;
   text-align: center;
 }

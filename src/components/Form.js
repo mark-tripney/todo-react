@@ -9,10 +9,11 @@ export default function Form(props) {
   }
 
   function handleFormSubmit(e) {
-    // TODO: Check for empty submissions
     e.preventDefault();
-    props.addTodo(todoTitle);
-    setTodoTitle("");
+    if (todoTitle) {
+      props.addTodo(todoTitle);
+      setTodoTitle("");
+    }
   }
 
   return (
