@@ -4,8 +4,8 @@ import './index.css';
 import App from './App';
 
 const DATA = [
-  {id: "todo-0", name: "First task", completed: false},
-  {id: "todo-1", name: "Second task", completed: true},
+  // {id: "todo-0", name: "First task", completed: false},
+  // {id: "todo-1", name: "Second task", completed: true},
 ];
 
-render(<App tasks={DATA}/>, document.getElementById('root'));
+render(<App todos={DATA}/>, document.getElementById('root'));
