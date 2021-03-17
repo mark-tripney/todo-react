@@ -20,10 +20,10 @@ export default function Form(props) {
       <form id="form" onSubmit={handleFormSubmit}>
         {/* TODO: Placeholder text should be slightly lighter */}
         <input type="text" className="input" id="input"
-            placeholder="Enter todo..."
+            placeholder="Todo..."
             aria-label="Enter todo" autoComplete="off" value={todoTitle}
             onChange={handleInputChange}/>
-        <ul className="todos" id="todos" role="list">
+        <ul className="todos" id="todo">
           {todoList}
         </ul>
       </form>
