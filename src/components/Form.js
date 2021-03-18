@@ -1,8 +1,7 @@
 import React, {useState} from "react";
 
-export default function Form(props) {
+export default function Form({todoList, addTodo}) {
   const [todoTitle, setTodoTitle] = useState("");
-  const {todoList} = props;
 
   function handleInputChange(e) {
     setTodoTitle(e.target.value);
@@ -11,7 +10,7 @@ export default function Form(props) {
   function handleFormSubmit(e) {
     e.preventDefault();
     if (todoTitle) {
-      props.addTodo(todoTitle);
+      addTodo(todoTitle);
       setTodoTitle("");
     }
   }
@@ -23,9 +22,6 @@ export default function Form(props) {
             placeholder="Todo..."
             aria-label="Enter todo" autoComplete="off" value={todoTitle}
             onChange={handleInputChange}/>
-        <ul className="todos" id="todo">
-          {todoList}
-        </ul>
       </form>
   )
 }
