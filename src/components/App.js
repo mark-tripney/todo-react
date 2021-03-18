@@ -12,11 +12,11 @@ function App(props) {
     todos.filter(todo => todo.completed === false).length
   );
 
-  function getActiveCount() {
+  const getActiveCount = () => {
     // Return the number of uncompleted todos
     const activeTodos = todos.filter(todo => todo.completed === false).length;
     setActiveCount(activeTodos);
-  }
+  };
 
   const todoList = todos.map(todo => (
     <Todo
@@ -29,6 +29,18 @@ function App(props) {
     />
   ));
 
+  const handleToggleComplete = id => {
+    let mappedCompletes = todos.map(todo =>
+      todo.id === parseInt(id)
+        ? { ...todo, complete: !todo.complete }
+        : { ...todo }
+    );
+    setTodos(mappedCompletes);
+    setActiveCount(
+      mappedCompletes.filter(todo => todo.complete === false).length
+    );
+  };
+
   function addTodo(name) {
     const newTodo = { id: `todoID-${nanoid()}`, name: name, completed: false };
     setTodos([...todos, newTodo]);
@@ -38,8 +50,13 @@ function App(props) {
   return (
     <div className="todos">
       <Heading count={activeCount} />
-      <Form addTodo={addTodo} />
-      <TodoList todoList={todoList} />
+      <div className="wrapper">
+        <Form addTodo={addTodo} />
+        <TodoList
+          todoList={todoList}
+          handleToggleComplete={handleToggleComplete}
+        />
+      </div>
       <small>Left-click to toggle complete/incomplete.</small>
     </div>
   );
