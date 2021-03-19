@@ -28,9 +28,14 @@ function App() {
     );
   };
 
+  const handleDeleteCompleted = () => {
+    let filtered = todos.filter(todo => !todo.completed);
+    setTodos(filtered);
+  };
+
   return (
       <div className="todos">
-        <Heading count={activeCount}/>
+        <Heading count={activeCount} todos={todos} handleDeleteCompleted={handleDeleteCompleted}/>
         <div className="wrapper">
           <Form addTodo={addTodo}/>
           <TodoList todos={todos}
