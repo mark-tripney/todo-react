@@ -1,6 +1,6 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
-export default function Form({todoList, addTodo}) {
+export default function Form({ todoList, addTodo }) {
   const [todoTitle, setTodoTitle] = useState("");
 
   function handleInputChange(e) {
@@ -16,12 +16,18 @@ export default function Form({todoList, addTodo}) {
   }
 
   return (
-      <form id="form" onSubmit={handleFormSubmit}>
-        {/* TODO: Placeholder text should be slightly lighter */}
-        <input type="text" className="input" id="input"
-            placeholder="Todo..."
-            aria-label="Enter todo" autoComplete="off" value={todoTitle}
-            onChange={handleInputChange}/>
-      </form>
-  )
+    <form id="form" onSubmit={handleFormSubmit}>
+      {/* TODO: Placeholder text should be slightly lighter */}
+      <input
+        type="text"
+        className="input"
+        id="input"
+        placeholder="Todo..."
+        aria-label="Enter todo"
+        autoComplete="off"
+        value={todoTitle}
+        onChange={handleInputChange}
+      />
+    </form>
+  );
 }
