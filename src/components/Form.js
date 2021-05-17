@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 export default function Form({ todoList, addTodo }) {
-  const [todoTitle, setTodoTitle] = useState("");
+  const [todoTitle, setTodoTitle] = useState('');
 
   function handleInputChange(e) {
     setTodoTitle(e.target.value);
@@ -11,13 +11,12 @@ export default function Form({ todoList, addTodo }) {
     e.preventDefault();
     if (todoTitle) {
       addTodo(todoTitle);
-      setTodoTitle("");
+      setTodoTitle('');
     }
   }
 
   return (
     <form id="form" onSubmit={handleFormSubmit}>
-      {/* TODO: Placeholder text should be slightly lighter */}
       <input
         type="text"
         className="input"
